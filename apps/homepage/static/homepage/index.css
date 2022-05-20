@@ -1,0 +1,119 @@
+
+ :root {
+    --custom-line-height: 30;
+}
+
+
+body {
+    width: 100%;
+    margin: auto;
+    font-family: "PT Sans", sans-serif;
+    /* EXTRA CREDIT custom font */
+    /* margin: 10px auto; */
+    /* padding: 0%; */
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+
+nav {
+    background: gray;
+    /* text-align: center; */
+    /* line-height: 5; */
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+}
+
+.logo {
+    flex: 0 1 auto;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.nav-link {
+    flex: 0 1 100%;
+    text-align: center;
+    border-left: 5px double;
+    border-right: 5px double;
+    padding-top: 65px;
+}
+
+/*flex: 0 1 20%;*/
+#intro {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 20%;
+    background: lightgreen;
+    padding: 20px;
+    /* text-align: center; */
+    /* line-height: var(--custom-line-height); */
+}
+
+#main {
+
+    flex: 0 1 80%;
+    background: rgb(67, 69, 252);
+    padding: 20px;
+    /* line-height: 30; */
+    /* text-align: center; */
+    /* line-height: var(--custom-line-height); */
+}
+
+table,
+th,
+td {
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+    max-width: 670px;
+}
+
+tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+tr {
+    background-color: white
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+.divider {
+    background-color: white;
+    margin-top: 23px;
+    border-radius: 10px;
+    /* EXTRA CREDIT special effect */
+    min-height: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: blue;
+    /* EXTRA CREDIT special effect */
+}
+
+li {
+    list-style-type: square;
+}
+
+h1,
+h2 {
+    font-family: "Trebuchet MS", sans-serif;
+    /* EXTRA CREDIT custom font */
+} 

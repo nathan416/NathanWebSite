@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <title>{% block title %}base.html | django-project-nathan{% endblock %}</title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'base.css'%}" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <div class="custom-menu-wrapper">
+                <div class="pure-menu custom-menu custom-menu-top">
+                    <a href="{% url 'homepage:index' %}" class="pure-menu-heading custom-menu-brand">Home</a>
+                    <a href="#" class="custom-menu-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+                </div>
+                <div class="pure-menu pure-menu-horizontal pure-menu-scrollable custom-menu custom-menu-bottom custom-menu-tucked" id="tuckedMenu">
+                    <div class="custom-menu-screen"></div>
+                    <ul class="pure-menu-list">
+                        <li class="pure-menu-item">
+                            <a href="#intro" class="pure-menu-link">Introduction</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="#career-summary" class="pure-menu-link">Career Summary</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="#education-and-qualifications" class="pure-menu-link">Education and Qualifications</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="#interests-and-hobbies" class="pure-menu-link">Interests and Hobbies</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="{% url 'spidermanstopwatch:stopwatch' %}" class="pure-menu-link">Stopwatch</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="pure-menu-item">
+                            <a href="{% url 'core_logout' %}" class="pure-menu-link">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="pure-menu-item">
+                            <a href="{% url 'core_login' %}" class="pure-menu-link">Login</a>
+                        </li>
+                        {% endif %}     
+                    </ul>
+                </div>
+            </div>
+            <script>
+                (function (window, document) {
+                    document.getElementById('toggle').addEventListener('click', function (e) {
+                        document.getElementById('tuckedMenu').classList.toggle('custom-menu-tucked');
+                        document.getElementById('toggle').classList.toggle('x');
+                    });
+                })(this, this.document);
+            </script>
+            <ul class="pure-menu pure-menu-horizontal">
+            
+            </ul>
+        </header>
+        <main>
+            {% block content %}base.html{% endblock %}
+        </main>
+    </body>
+</html>
